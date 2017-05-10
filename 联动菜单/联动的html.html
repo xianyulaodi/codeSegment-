@@ -1,0 +1,66 @@
+<!--2级联动：-->
+<div id="selectN">
+<!--select的默认选项通常是读取的title的值，如果title被占用，比如被调查代码占用，可以用自定义属性tit，tit和title同时存在时，优先获取tit-->
+省份： <select tit="请选择省份" class="sn"></select>
+城市： <select tit="请选择城市" class="sn"></select>
+</div>
+ 
+<!--3级联动：-->
+<div id="select1">
+省份： <select tit="请选择省份" class="sn"></select>
+城市： <select tit="请选择城市" class="sn"></select>
+经销商： <select tit="请选择经销商" class="sn"></select>
+</div>
+ 
+<!--4级联动,最后一个“地址”在select外显式-->
+<div id="select2">
+省份： <select tit="请选择省份" class="sn"></select>
+城市： <select tit="请选择城市" class="sn"></select>
+经销商： <select tit="请选择经销商" class="sn"></select>
+<div style="display:none">
+<select title="请选择地址" class="sn "></select>
+</div>
+<br>
+地址：  <div id="addr"></div>
+ 
+<!--4级联动：-->
+<div id="select3">
+省份： <select tit="请选择省份" class="sn"></select>
+城市： <select tit="请选择城市" class="sn"></select>
+经销商： <select tit="请选择经销商" class="sn"></select>
+地址： <select tit="请选择地址" class="sn "></select>
+</div>
+ 
+<!--4级联动，最后一个select“地址”不用选--> 
+<div id="select4">
+省份： <select tit="请选择省份" class="sn"></select>
+城市： <select tit="请选择城市" class="sn"></select>
+经销商： <select tit="请选择经销商" class="sn"></select>
+地址： <select tit="请选择地址" class="sn "></select>
+</div>
+ 
+<!--4级联动,设置默认广东省 -->
+<div id="select5">
+省份： <select tit="请选择省份" class="sn"></select>
+城市： <select tit="请选择城市" class="sn"></select>
+经销商： <select tit="请选择经销商" class="sn"></select>
+地址： <select tit="请选择地址" class="sn "></select>
+</div>
+ 
+<!--4级联动,设置默认广东省广州市-->
+<div id="select6">
+省份： <select tit="请选择省份" class="sn"></select>
+城市： <select tit="请选择城市" class="sn"></select>
+经销商： <select tit="请选择经销商" class="sn"></select>
+地址： <select tit="请选择地址" class="sn "></select>
+</div>
+ 
+<!--4级联动,设置默认广东省广州市,并且灰选(注：在给select的disabled设置成true后，form表单就不能用name的方式提交他的值了)-->
+<div id="select7">
+省份： <select tit="请选择省份" class="sn"></select>
+城市： <select tit="请选择城市" class="sn"></select>
+经销商： <select tit="请选择经销商" class="sn"></select>
+地址： <select tit="请选择地址" class="sn "></select>
+</div>
+ 
+ 

@@ -1,0 +1,12 @@
+PJ库中的循环：理解
+var slide01=pc.getElems('.slide01');
+pc.each(slide01,function(elem,k){
+	new pc.tab.scroll({
+		target: pc.getElems('.pannel',elem),
+		width: 220,
+		stay:4000,
+		autoPlay: true,
+		prevBtn:pc.getElem('.btn-prev',elem),
+		nextBtn:pc.getElem('.btn-next',elem)
+	});
+}

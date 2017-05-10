@@ -1,0 +1,6 @@
+让ie支持html5，在head前加这段代码
+  ＜script src=”http://html5shiv.googlecode.com/svn/trunk/html5.js”>＜/script>
+
+
+让ie8支持media
+<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>

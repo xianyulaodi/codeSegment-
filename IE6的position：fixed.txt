@@ -1,0 +1,16 @@
+解决IE6下的position：fixed问题
+先加这段代码，解决滚动时的晃动问题：
+*html{background-image:url(about:blank);background-attachment:fixed;}
+
+然后然后再加这段
+_position:absolute;
+_bottom:auto;
+_top:expression(eval(document.documentElement.scrollTop+10));
+
+
+或者加这段
+* html .ie6fixedTL{position:absolute;left:expression(eval(document.documentElement.scrollLeft+10));top:expression(eval(document.documentElement.scrollTop+10))}
+
+
+position:fixed问题，top：设置具体值，left:50%; margin-left:500px; 用margin-left去定位
+

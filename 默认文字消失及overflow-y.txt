@@ -1,0 +1,19 @@
+1、overflow-y:auto 填图，加上滚动条
+
+
+更改默认样式的文字，让它消失，三种方法：
+1、font-size:0
+2、line-height：0
+3、display：none；
+4、overflow：hidden；
+
+
+
+
+
+
+
+
+
+
+

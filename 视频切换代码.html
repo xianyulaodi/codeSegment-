@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gb2312" />
+<title>视频切换</title>
+<meta name="keywords" content="关键字,关键字,关键字" />
+<meta name="description" content="描述。……" />
+<meta name="Author" content="YangMing_gz ">
+<link href="http://js.3conline.com/pconline/common/css/zt_base.1.0.css" rel="stylesheet" type="text/css">
+<style>
+.video-area{width:600px;margin:0 auto;margin-bottom:35px;height:378px;background:#09f;}
+.video-ctrl{ width:940px;margin:0 auto;}
+.video-ctrl-wrap{margin-right:-10px;}
+.video-ctrl .item { float:left; display:inline;cursor:pointer;width:180px;margin-right:10px;text-align:center;}
+.video-ctrl .img-area{display:block;width:180px;}
+.video-ctrl .img-area img{width:180px;height:100px;vertical-align:top;}
+.video-ctrl .item .video-tit{display:block;margin:0 auto;height:30px;line-height:30px;color:#000;font-size:14px;}
+.video-ctrl .cur{background:#00c;}
+.video-ctrl .cur .video-tit{color:#fff;}
+</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="video-area" id="J-video-area"></div>
+	<div id="J-video-ctrl" class="video-ctrl">
+		<ul class="video-ctrl-wrap clearfix" >
+			<li class="item">
+				<i class="img-area"><img src="http://dummyimage.com/180x100/79c/c00" alt="" /></i>
+				<i class="video-tit">视频1</i>
+			</li>
+			<li class="item">
+				<i class="img-area"><img src="http://dummyimage.com/180x100/79c/c00" alt="" /></i>
+				<i class="video-tit">视频2</i>
+			</li>
+			<li class="item">
+				<i class="img-area"><img src="http://dummyimage.com/180x100/79c/c00" alt="" /></i>
+				<i class="video-tit">视频3</i>
+			</li>
+			<li class="item">
+				<i class="img-area"><img src="http://dummyimage.com/180x100/79c/c00" alt="" /></i>
+				<i class="video-tit">视频4</i>
+			</li>
+			<li class="item">
+				<i class="img-area"><img src="http://dummyimage.com/180x100/79c/c00" alt="" /></i>
+				<i class="video-tit">视频5</i>
+			</li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+var arry_v = [
+	'<embed src="http://player.youku.com/player.php/sid/XNDUyODU1NTM2/v.swf?isAutoPlay=true" allowFullScreen="true" quality="high" width="600" height="378" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>',
+	'<embed src="http://player.youku.com/player.php/sid/XODgwMTk4ODcy/v.swf?isAutoPlay=true" allowFullScreen="true" quality="high" width="600" height="378" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>',
+	'<embed src="http://player.youku.com/player.php/Type/Folder/Fid/18250174/Ob/1/sid/XNDUyOTE5MTMy/v.swf?isAutoPlay=true" quality="high" width="600" height="378" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>',
+	'<embed src="http://player.youku.com/player.php/sid/XNDUyODA1NjY4/v.swf?isAutoPlay=true" allowFullScreen="true" quality="high" width="600" height="378" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>',
+	'<embed src="http://player.youku.com/player.php/sid/XNDUyODg4MzQw/v.swf?isAutoPlay=true" allowFullScreen="true" quality="high" width="600" height="378" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>'
+];
+
+var videoArea=document.getElementById('J-video-area'),
+	 items=document.getElementById('J-video-ctrl').getElementsByTagName('li');
+	 items[0].className+=' cur';
+videoArea.innerHTML=arry_v[0];
+for (var i = 0 , len=items.length; i < len ; i++) {
+	(function(t){
+		items[t].onclick=function(){
+			for (var j = 0 , len=items.length; j < len ; j++) {
+				items[j].className=items[j].className.replace(' cur','');
+			}
+			items[t].className+=' cur';
+			videoArea.innerHTML=arry_v[t];
+		}
+	})(i);
+}
+
+</script>
+
+</body>
+</html>

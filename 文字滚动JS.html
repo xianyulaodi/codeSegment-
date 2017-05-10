@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>marquee</title>
+</head>
+<body>
+<div>
+	<ul style="width:200px;height:100px;overflow:hidden;" id="scrollFocus">
+		<li style="height:25px;">testtesttesttesttesttest1</li>
+		<li style="height:25px;">testtesttesttesttesttest2</li>
+		<li style="height:25px;">testtesttesttesttesttest3</li>
+		<li style="height:25px;">testtesttesttesttesttest4</li>
+		<li style="height:25px;">testtesttesttesttesttest5</li>
+		<li style="height:25px;">testtesttesttesttesttest6</li>
+		<li style="height:25px;">testtesttesttesttesttest7</li>
+	</ul>
+</div>
+ 
+<script type="text/javascript">
+function startmarquee(lh,speed,delay,obj){
+	var t;
+	var p=false;
+	var o=document.getElementById(obj);
+	if (!o) return true;
+	o.innerHTML+=o.innerHTML;
+	o.onmouseover=function(){p=true}
+	o.onmouseout=function(){p=false}
+	o.scrollTop = 0;
+	function start(){
+		t=setInterval(scrolling,speed);
+		if(!p) o.scrollTop += 1;
+	}
+	function scrolling(){
+		if(o.scrollTop%lh!=0){
+			o.scrollTop += 1;
+			if(o.scrollTop>=o.scrollHeight/2) o.scrollTop = 0;
+		}else{
+			clearInterval(t);
+			setTimeout(start,delay);
+		}
+	}
+	setTimeout(start,delay);
+}
+startmarquee(24,30,1000,"scrollFocus");
+</script>

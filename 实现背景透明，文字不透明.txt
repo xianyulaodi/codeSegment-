@@ -1,0 +1,4 @@
+div{background:rgba(0,0,0,0.2) none repeat scroll !important; /*实现FF背景透明，文字不透明*/
+background:#000; filter:Alpha(opacity=20);/*实现IE背景透明*/ 
+ width:500px; height:500px; color:#F30; font-size:32px; font-weight:bold;}
+ div p{ position:relative;}/*实现IE文字不透明*/
