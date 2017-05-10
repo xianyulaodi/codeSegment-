@@ -1,0 +1,6 @@
+具体的实现过程看这个API
+
+第一篇博客比较好
+http://blog.wpjam.com/article/jquery-mcustomscrollbar-js/
+
+http://blog.csdn.net/cdnight/article/details/41351505

@@ -1,0 +1,61 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>marquee</title>
+</head>
+<style type="text/css">
+	/*CSS代码片段*/
+
+/* 定义一个走马灯动画 */
+
+@-webkit-keyframes marquee {
+    0% { left: 0; }
+    100% { left: -100%; }
+}
+@-moz-keyframes marquee {
+    0% { left: 0; }
+    100% { left: -100%; }
+}
+@-ms-keyframes marquee {
+    0% { left: 0; }
+    100% { left: -100%; }
+}
+@-o-keyframes marquee {
+    0% { left: 0; }
+    100% { left: -100%; }
+}
+@keyframes marquee {
+  0%{left:0}
+  100%{left: -100%}
+}
+
+.marquee {
+  height: 30px;
+
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee div {
+  display: block;
+  width: 200%;
+  height: 30px;
+  position: absolute;
+  overflow: hidden;
+  -webkit-animation: marquee 4s linear infinite;
+  -moz-animation: marquee 4s linear infinite;
+  -ms-animation: marquee 4s linear infinite;
+  -o-animation: marquee 4s linear infinite;
+  animation: marquee 4s linear infinite;
+}
+</style>
+<body>
+<div class="marquee" style="width:300px;">
+  	<div>纯CSS3生成的走马灯效果纯CSS3生成的走马灯效果</div>
+</div>
+
+</body>
+ 
+</html>

@@ -1,0 +1,23 @@
+当需要滚动的元素在页面下面，也就是触发了滚动条的时候，swiper这个插件在ios端会导致img消失的现象，很是诡异
+原因是因为swiper.min.css里面的这段代码导致的。把它删除即可
+
+.swiper-container-android .swiper-slide,.swiper-wrapper {
+    -webkit-transform: translate3d(0,0,0);
+     -moz-transform: translate3d(0,0,0);
+      -o-transform: translate(0,0);
+	-ms-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0)
+}
+
+还有一个方法就是
+translate3D属性容易引起闪白，用-webkit-backface-visibility:hidden;解决
+也就是在上面加上这段代码：
+
+.swiper-container-android .swiper-slide,.swiper-wrapper {
+    -webkit-transform: translate3d(0,0,0);
+     -moz-transform: translate3d(0,0,0);
+      -o-transform: translate(0,0);
+	-ms-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	-webkit-backface-visibility:hidden;
+}

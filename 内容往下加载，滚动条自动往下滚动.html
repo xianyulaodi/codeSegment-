@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cssTest</title>
+	<style type="text/css">
+
+
+		.box{
+			width: 500px;
+			height: 200px;
+			overflow-y: auto;
+			background: green;
+		}
+		li{
+			height: 25px;
+			width: 100%;
+			background: blue;
+			list-style: none;
+			text-align: center;
+			color:#fff;
+			border-bottom: 1px solid #fff;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<ul class="box">
+		<li>1</li>
+	</ul>
+</body>
+<script type="text/javascript" src="http://res.co.yystatic.com/js/mobile/??jquery-1.8.0.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var array=[1,2,3,4,5,8,9,7,8,9,1,5,5,5,5,5,5,54,7,7,5,5,2,8,1,2,3,4,5,8,9,7,8,9,1,5,5,5,5,5,5,54,7,7,5,5,2,8]
+		var num=0;
+		var len=array.length;
+
+		var timmer=setInterval(function(){
+
+				var list='<li>'+array[num]+'</li>';
+
+				// 说明出现滚动条了
+				if(num>6){
+
+					$('.box').scrollTop(
+
+					    $('li').eq(num).offset().top - $('.box').offset().top + $('.box').scrollTop()
+					);
+				}
+				
+				$('.box').append(list);
+
+				num+=1;
+
+				if(num>len){
+
+					clearInterval(timmer);
+				}
+
+		},3000);
+	})
+</script>	
+</html>

@@ -1,0 +1,6 @@
+.ennobleList::-webkit-scrollbar{width:0px;height: 0;opacity: 0;}
+.ennobleList::-webkit-scrollbar:horizontal {
+   width:0px;
+   height: 0;
+   opacity: 0;
+}

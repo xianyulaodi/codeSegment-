@@ -1,0 +1,10 @@
+function isScroll(){
+
+        $(window).unbind('scroll').bind('scroll',function() {
+
+          if ($(document).scrollTop() >= $(document).height() - $(window).height()) {
+              // 滚动到底部
+              alert("滚动条已经到达底部为" + $(document).scrollTop());
+          }
+       });
+    }
