@@ -1,0 +1,7 @@
+Ajax调用尽量采用GET方法调用
+
+实际使用XMLHttpRequest时，如果使用POST方法实现，会发生2次HTTP请求，而使用GET方法只会发生1次HTTP请求。如果改用GET方法，HTTP请求减少50%！
+
+
+移动端如何定义字体font-family
+中文字体使用系统默认即可，英文用Helvetica

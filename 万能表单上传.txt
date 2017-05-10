@@ -1,0 +1,34 @@
+function caseSave(T){
+    $('#caseButton').button('loading');   
+    var formData=new FormData(document.forms.namedItem('caseForm'));
+
+	//caseform是form 的name 最好将id和name都写成一样
+
+    var oReq = new XMLHttpRequest();
+    oReq.upload.addEventListener("progress", uploadProgress, false);
+
+	//上传的路径
+    oReq.open("POST", "/admin/case/save");
+
+    oReq.onload = function(oEvent) {
+        if (oReq.status == 200) {
+		//这里执行上传成功的函数
+        } else {
+            alert('err');
+        }
+    };
+    oReq.send(formData);
+}
+
+//下面这个是文件上传的进度
+function uploadProgress(evt){
+    if (evt.lengthComputable) {
+        var percentComplete = Math.round(evt.loaded * 100 / evt.total);
+        if(percentComplete==100) {
+            $('#caseButton').button('reset');
+        }
+        $("#caseModal").modal('hide');
+        caseList();
+    }
+
+}

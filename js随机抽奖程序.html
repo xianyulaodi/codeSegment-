@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+#demo{
+	width:80%;
+	height:100px;
+	text-align:center;
+	font-size:30px;
+	font-family:'方正粗活意简体','微软雅黑';
+	background-color:lime;
+	margin:0 auto;
+	display:-webkit-box;
+	-webkit-box-align:center;
+	-webkit-box-pack:center;
+}
+</style>
+<script>
+		var data='周静，蔡依林，周瑜，曹操，诸葛亮，夏侯淳，杨静初，黄飞鸿';
+		var arr=data.split('，');
+		var timer=null;
+		
+		function start(){
+			if(!timer){
+				timer=setInterval(function change(){
+					var a=arr.length-1;
+					var rand=Math.random();
+					var randIndex=parseInt(a*rand);
+					
+					var demo=document.getElementById('demo');
+					demo.innerHTML=arr[randIndex];
+					
+					},50);
+				}
+			
+		}
+		
+		function stop1(){
+			clearInterval(timer);
+			timer=null;
+			
+					var txt=document.getElementById('txt');
+					var demo=document.getElementById('demo');
+					txt.value=demo.innerHTML;
+					
+					setTimeout(function(){
+				alert('恭喜你：'+txt.value);
+			},1300)
+			}
+			
+			
+</script>
+</head>
+
+<body style="text-align:center;">
+		<div id="demo">单击开始抽奖</div>
+    <input type="button" onclick="start()" value="点击开始抽奖"/>
+	<input type="button" onclick="stop1()" value="停止"/>	<br/>    
+    	<input type="text" id="txt"/>
+</body>
+</html>

@@ -1,0 +1,14 @@
+(function() {
+    var $backToTopTxt = "Top", $backToTopEle = $('<div class="toTop"></div>').appendTo($("body"))
+        .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
+            $("html, body").animate({ scrollTop: 0 }, 500);
+    }), $backToTopFun = function() {
+        var st = $(document).scrollTop();
+        var winh = $(window).height();
+        // id="carousel
+        (st >300)? $backToTopEle.fadeIn(1000): $backToTopEle.fadeOut(1000);    
+        
+    };
+    $(window).bind("scroll", $backToTopFun);
+    $(function() { $backToTopFun(); });
+})();

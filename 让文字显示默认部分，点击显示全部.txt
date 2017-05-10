@@ -1,0 +1,22 @@
+var text = $("#moreDetail").text();
+              var flag = text.length > 25 ? true : false;
+               
+              if(flag){
+                  $("#moreDetail").html("");
+                  $("#moreDetail").append("<p>" + text.substring(0, 25) 
+                            + "<span id='hide' style='display:none'>" + text.substring(20) + "</span>"
+                            + "<a href='javascript:;' class='bui_tc_blue' id='open'>...显示全部</a></p>");
+              }
+               
+              $("#open").click(function(){
+                  if(flag){
+                      $("#open").text("...隐藏");
+                      $("#hide").show();
+                      flag = false;
+                  } else{
+                      $("#open").text("...显示全部");
+                      $("#hide").hide();
+                      flag = true;
+                  }
+                   
+              });

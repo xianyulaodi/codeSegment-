@@ -1,0 +1,28 @@
+//Í¼Æ¬Ô¤ÀÀ
+$(function() {  
+    var path,  
+        clip = $("#img"),    //Í¼Æ¬µÄµØÖ·   imgµÄid
+        FileReader = window.FileReader;  
+
+    $("#file").change(function() {       //#fileÊÇinput type='file'
+  
+        if (FileReader) {  
+            var reader = new FileReader(),  
+                file = this.files[0];  
+            reader.onload = function(e) {  
+                clip.attr("src", e.target.result);  
+            };  
+            reader.readAsDataURL(file);  
+        }  
+        else {  
+            path = $(this).val();  
+            if (/"\w\W"/.test(path)) {  
+                pathpath = path.slice(1,-1);  
+               
+            }  
+            clip.attr("src",path);
+            
+            
+        }  
+    });  
+})

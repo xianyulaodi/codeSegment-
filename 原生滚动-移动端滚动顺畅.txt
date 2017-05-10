@@ -1,0 +1,7 @@
+-webkit-overflow-scrolling:touch;
+
+
+Àý£ºdiv{
+    -webkit-overflow-scrolling:touch;
+	}
+

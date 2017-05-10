@@ -1,0 +1,42 @@
+﻿//调用
+$(function(){
+	zmnImgCenter($(".t-img"));//JQ的dom
+	});
+//图片居中
+function zmnImgCenter(obj){
+	obj.each(function(){
+			var $this=$(this);
+			var objHeight=$this.height();//图片高度
+			var objWidth=$this.width();//图片宽度
+			var parentHeight=$this.parent().height();//图片父容器高度
+			var parentWidth=$this.parent().width();//图片父容器宽度
+			var ratio=objHeight/objWidth;
+			if(objHeight>parentHeight && objWidth>parentWidth){//当图片宽高都大于父容器宽高
+				if(objHeight>objWidth) {//赋值宽高
+					$this.width(parentWidth);
+					$this.height(parentWidth*ratio);
+					}
+				else {
+					$this.height(parentHeight);
+					$this.width(parentHeight/ratio);
+					}
+				objHeight=$this.height();//重新获取宽高
+				objWidth=$this.width();
+				if(objHeight>objWidth) {
+					$(this).css("top",(parentHeight-objHeight)/2);
+					//定义top属性
+				}
+				else
+				{
+					//定义left属性
+					$(this).css("left",(parentWidth-objWidth)/2);
+					}
+			}
+			else{//当图片宽高小于父容器宽高
+				if(objWidth>parentWidth){//当图片宽大于容器宽，小于时利用css text-align属性居中
+					$(this).css("left",(parentWidth-objWidth)/2);
+					}
+				$(this).css("top",(parentHeight-objHeight)/2);
+				}
+		})
+	}

@@ -1,0 +1,3 @@
+androine 4.0.x  touchend失效
+
+解决方法：  event.preventDefault();

@@ -1,0 +1,17 @@
+方法1：兼容好 table
+
+设置父元素的display: table;table-layout: fixed;width: 100%;
+设置子元素为display: table-cell;即可。
+
+
+方法2：flex
+
+父元素：  display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+
+子元素：  -webkit-box-flex: 1;
+          -ms-flex: 1;
+          -webkit-flex: 1;
+          flex: 1;
